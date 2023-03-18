@@ -11,4 +11,15 @@ import { TaskList } from '../../model/task-list';
 export class TodoListComponent {
   public taskList: Array<TaskList> = [];
 
+  public deleteItemTaskList(event: number) {
+    this.taskList.splice(event, 1);
+  }
+
+  public deleteAllTaskList() {
+    const confirm = window.confirm('Você deseja realmente Deletar tudo?');
+
+    if(confirm) {
+      this.taskList = [];
+    }
+  }
 }
